@@ -18,7 +18,7 @@ rootRoute.use('/cards', require('./cards'));
 rootRoute.use('/users', require('./users'));
 rootRoute.use('/', require('./notFound'));
 
-rootRoute.unsubscribe(errorLogger);
+rootRoute.use(errorLogger);
 
 rootRoute.use(errors());
 
