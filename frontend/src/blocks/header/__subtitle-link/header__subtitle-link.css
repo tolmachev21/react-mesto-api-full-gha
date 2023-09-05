@@ -1,0 +1,18 @@
+.header__subtitle-link {
+    max-width: 114px;
+    height: 22px;
+    padding: 51px 0 46px 0;
+    font-size: 18px;
+    line-height: 22px;
+    color: #fff;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.header__subtitle-link:hover {
+    opacity: 0.6;
+}

@@ -1,0 +1,19 @@
+.header__leave {
+    margin: 0;
+    width: 58px;
+    height: 22px;
+    padding: 0;
+    text-decoration: none;
+    color: #ccc;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.header__leave:hover {
+    opacity: 0.6;
+}

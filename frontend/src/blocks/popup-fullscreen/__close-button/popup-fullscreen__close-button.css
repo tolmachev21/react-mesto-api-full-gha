@@ -1,0 +1,26 @@
+.popup-fullscreen__close-button {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    cursor: pointer;
+    background: url(../../../images/Close-Icon.svg) no-repeat center;
+    background-size: 32px;
+}
+
+.popup-fullscreen__close-button:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 730px) {
+    .popup-fullscreen__close-button {
+        width: 20px;
+        height: 20px;
+        right: 0;
+        top: -36px;
+        background-size: 20px;
+    }
+}

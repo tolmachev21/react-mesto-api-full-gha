@@ -1,0 +1,6 @@
+.popup__submit-button_state_invalid {
+    background-color: rgba(0,0,0,0);
+    color: #D9D9D9;
+    border: 1px solid #D9D9D9;
+    cursor: default;
+}

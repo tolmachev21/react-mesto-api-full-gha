@@ -1,0 +1,14 @@
+.place__select {
+    margin: 0;
+    width: 22px;
+    height: 19px;
+    align-self: baseline;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    background: url(../../../images/Vector-love.svg) no-repeat center / cover;
+}
+
+.place__select:hover {
+    opacity: 0.5;
+}

@@ -1,0 +1,9 @@
+.popup__submit-button_state_valid {
+    color: #FFFFFF;
+    background-color: rgba(0,0,0,1);
+}
+
+
+.popup__submit-button_state_valid:hover {
+    background-color: rgba(0,0,0,0.8);
+}
