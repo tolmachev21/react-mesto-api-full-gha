@@ -6,7 +6,7 @@ const {
   errorLogger,
 } = require('../middlewares/logger');
 
-rootRoute.use(cors({ origin: 'http://51.250.6.2:80' }));
+rootRoute.use(cors({ origin: 'http://localhost:3000' }));
 
 rootRoute.use(requestLogger);
 

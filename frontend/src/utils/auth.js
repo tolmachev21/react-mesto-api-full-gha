@@ -1,4 +1,4 @@
-const baseUrl = 'http://51.250.6.2:4000';
+const baseUrl = 'http://localhost:3000';
 
 
 function getResponseData(res) {
