@@ -11,7 +11,7 @@ mongoose.connect('mongodb://127.0.0.1/mestodb', {
   useNewUrlParser: true,
 });
 
-app.use('/', require('./routes/index'));
+app.use('/api', require('./routes/index'));
 
 app.listen(PORT, () => {
 
