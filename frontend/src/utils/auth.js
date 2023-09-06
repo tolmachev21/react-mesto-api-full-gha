@@ -1,4 +1,4 @@
-const baseUrl = 'https://localhost:3000';
+const baseUrl = 'http://localhost:3000';
 
 
 function getResponseData(res) {
@@ -17,6 +17,7 @@ export function registration(data) {
         })
     })
         .then(res => {
+            console.log(res)
             return getResponseData(res)
         })
 };
