@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3000';
+const baseUrl = 'https://api.mesto-pet-project.nomoredomainsicu.ru';
 
 
 function getResponseData(res) {

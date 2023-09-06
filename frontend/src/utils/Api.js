@@ -97,7 +97,7 @@ class Api {
 };
 
 const api = new Api({
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://api.mesto-pet-project.nomoredomainsicu.ru',
   headers: {
     authorization: `Bearer ${localStorage.token}`,
     'Content-Type': 'application/json'
