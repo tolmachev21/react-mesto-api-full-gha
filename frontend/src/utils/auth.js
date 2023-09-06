@@ -17,7 +17,6 @@ export function registration(data) {
         })
     })
         .then(res => {
-            console.log(res)
             return getResponseData(res)
         })
 };
