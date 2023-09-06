@@ -6,7 +6,7 @@ const {
   errorLogger,
 } = require('../middlewares/logger');
 
-rootRoute.use(cors());
+rootRoute.use(cors({ origin: 'https://mesto-pet-project.nomoredomainsicu.ru' }));
 
 rootRoute.use(requestLogger);
 
