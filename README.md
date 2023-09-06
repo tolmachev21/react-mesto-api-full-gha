@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.6.2
+IP 51.250.6.2
 
 Frontend https://mesto-pet-project.nomoredomainsicu.ru
 
