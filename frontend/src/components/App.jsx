@@ -73,7 +73,7 @@ function App() {
 
     useEffect(() => {
         if (loggedIn) {
-            Promise.all([api.getUserInfo(), api.getInitialCards()])
+            Promise.all([api.getUserInfo(localStorage.token), api.getInitialCards(localStorage.token)])
                 .then(([dataUser, dataCards]) => {
                     setCurrentUser(dataUser);
                     setCards(dataCards);
@@ -99,7 +99,7 @@ function App() {
     }, [navigate])
 
     function handleUpdateAvatar(dataAvatar) {
-        api.editUserAvatar(dataAvatar)
+        api.editUserAvatar(dataAvatar, localStorage.token)
             .then((res) => {
                 setCurrentUser(res);
                 closeAllPopups();
@@ -108,7 +108,7 @@ function App() {
     };
 
     function handleUpdateUser(dataUserInfo) {
-        api.editUserInfo(dataUserInfo)
+        api.editUserInfo(dataUserInfo, localStorage.token)
             .then((res) => {
                 setCurrentUser(res);
                 closeAllPopups();
@@ -117,7 +117,7 @@ function App() {
     };
 
     function handleAddPlace(dataCard) {
-        api.addNewCard(dataCard)
+        api.addNewCard(dataCard, localStorage.token)
             .then((res) => {
                 setCards([res, ...cards]);
                 closeAllPopups();
@@ -127,7 +127,7 @@ function App() {
 
     function handleDeleteSubmit(event) {
         event.preventDefault();
-        api.deleteCard(deleteCardId)
+        api.deleteCard(deleteCardId, localStorage.token)
             .then(() => {
                 setCards(cards.filter(item => {
                     return item._id !== deleteCardId

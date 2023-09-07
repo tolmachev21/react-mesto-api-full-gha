@@ -12,14 +12,14 @@ function ButtonLike({ likes, myId, cardId }) {
 
   function handleLike() {
     if (isLike) {
-      api.deleteLikeCard(cardId)
+      api.deleteLikeCard(cardId, localStorage.token)
         .then((res) => {
           setLike(false)
           setCounter(res.likes.length)
         })
         .catch((err) => console.log(`Ошибка при удалении лайка ${err}`))
     } else {
-      api.addLikeCard(cardId)
+      api.addLikeCard(cardId, localStorage.token)
         .then((res) => {
           setLike(true)
           setCounter(res.likes.length)

@@ -1,8 +1,6 @@
 class Api {
   constructor(options) {
     this._baseUrl = options.baseUrl;
-    this._headers = options.headers;
-    this._authorization = options.headers.authorization;
   }
 
   _checkResponse(res) {
@@ -12,28 +10,33 @@ class Api {
     return Promise.reject(`Ошибка: ${res.status}`);
   }
 
-  getInitialCards() {
+  getInitialCards(token) {
     return fetch(`${this._baseUrl}/cards`, {
       headers: {
-        authorization: this._authorization
-      }
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
     })
       .then(this._checkResponse)
   }
 
-  getUserInfo() {
+  getUserInfo(token) {
     return fetch(`${this._baseUrl}/users/me`, {
       headers: {
-        authorization: this._authorization
-      }
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
     })
       .then(this._checkResponse)
   }
 
-  editUserInfo(data) {
+  editUserInfo(data, token) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
-      headers: this._headers,
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
       body: JSON.stringify({
         name: data.user,
         about: data.job
@@ -42,10 +45,13 @@ class Api {
       .then(this._checkResponse)
   }
 
-  editUserAvatar(data) {
+  editUserAvatar(data, token) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
-      headers: this._headers,
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
       body: JSON.stringify({
         avatar: data.avatar
       })
@@ -53,10 +59,13 @@ class Api {
       .then(this._checkResponse)
   }
 
-  addNewCard(data) {
+  addNewCard(data, token) {
     return fetch(`${this._baseUrl}/cards`, {
       method: 'POST',
-      headers: this._headers,
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
       body: JSON.stringify({
         name: data.title,
         link: data.link,
@@ -65,32 +74,35 @@ class Api {
       .then(this._checkResponse)
   }
 
-  addLikeCard(cardId) {
+  addLikeCard(cardId, token) {
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: 'PUT',
       headers: {
-        authorization: this._authorization
-      }
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
     })
       .then(this._checkResponse)
   }
 
-  deleteLikeCard(cardId) {
+  deleteLikeCard(cardId, token) {
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: 'DELETE',
       headers: {
-        authorization: this._authorization
-      }
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
     })
       .then(this._checkResponse)
   }
 
-  deleteCard(cardId) {
+  deleteCard(cardId, token) {
     return fetch(`${this._baseUrl}/cards/${cardId}`, {
       method: 'DELETE',
       headers: {
-        authorization: this._authorization
-      }
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
     })
       .then(this._checkResponse)
   }
@@ -98,10 +110,6 @@ class Api {
 
 const api = new Api({
   baseUrl: 'https://api.mesto-pet-project.nomoredomainsicu.ru',
-  headers: {
-    authorization: `Bearer ${localStorage.token}`,
-    'Content-Type': 'application/json'
-  }
 });
 
 export default api;
